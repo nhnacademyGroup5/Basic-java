@@ -11,7 +11,7 @@
 3. 김지원 : 
 
 == 2️⃣ 일정(계획 예정)
-1. Java Version 9.0
+1. Java Version 9.0 : https://math.hws.edu/javanotes/
  
 == 3️⃣ 규칙
 1. git
