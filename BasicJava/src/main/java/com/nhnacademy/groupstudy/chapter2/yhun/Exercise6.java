@@ -1,4 +1,4 @@
-package com.nhnacademy.groupstudy.section2.chapter2;
+package com.nhnacademy.groupstudy.chapter2.yhun;
 
 import java.io.BufferedReader;
 import java.io.IOException;
