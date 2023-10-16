@@ -1,0 +1,9 @@
+
+D
+java:S2140
+")Use "java.util.Random.nextInt()" instead.(………Üýÿÿÿÿ
+D
+java:S2140")Use "java.util.Random.nextInt()" instead.(þ®âÍþÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(œ€Á”ûÿÿÿÿ
+?	java:S106"+Replace this use of System.out by a logger.(º®Þ
+@	java:S106"+Replace this use of System.out by a logger.(Ìôš±
