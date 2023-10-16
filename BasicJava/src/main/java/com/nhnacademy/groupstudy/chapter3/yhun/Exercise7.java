@@ -2,6 +2,7 @@ package com.nhnacademy.groupstudy.chapter3.yhun;
 
 public class Exercise7 {
 
+    static final int day = 365;
     public static void main(String[] args) {
 
         System.out.println("three people : " + birthOfthreePeople());
@@ -11,9 +12,9 @@ public class Exercise7 {
     }
 
     static int randomChoice(){
-        int[] birth = new int[365];
+        int[] birth = new int[day];
 
-        for(int i=0; i<365; i++){
+        for(int i=0; i<day; i++){
             int idx = randomNumber();
             birth[idx]++;
         }
@@ -21,7 +22,7 @@ public class Exercise7 {
         return birthCount(birth);
     }
     static int birthOfthreePeople(){
-        int[] birth = new int[365];
+        int[] birth = new int[day];
         int count = 0;
 
         while (true){
@@ -38,7 +39,7 @@ public class Exercise7 {
     }
 
     static int allBirth(){
-        int[] birth = new int[365];
+        int[] birth = new int[day];
         int count = 0;
 
         while (true){
@@ -68,6 +69,6 @@ public class Exercise7 {
     }
 
     static int randomNumber(){
-        return (int)(Math.random()*365);
+        return (int)(Math.random()*day);
     }
 }

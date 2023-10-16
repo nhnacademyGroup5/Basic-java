@@ -1,5 +1,7 @@
 package com.nhnacademy.groupstudy.chapter3.yhun;
 
+import java.util.stream.Stream;
+
 public class Exercise1 {
     public static void main(String[] args) {
 
