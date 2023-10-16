@@ -1,0 +1,14 @@
+package com.nhnacademy.groupstudy.chapter2.jinwoo;
+
+public class Exercise_2_1 {
+    public static void main(String[] args) {
+        System.out.println("**             *************     **             ***             **");
+        System.out.println("**                    **          **           ** **           **");
+        System.out.println("**                    **           **         **   **         **");
+        System.out.println("**                    **            **       **     **       **");
+        System.out.println("**            **      **             **     **       **     **");
+        System.out.println("**             **     **              **   **         **   **");
+        System.out.println("**              **   **                ** **           ** **");
+        System.out.println("**********       ****                   ***             ***");
+    }
+}
