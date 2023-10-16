@@ -6,7 +6,7 @@ module com.nhnacademy.groupstudy{
     opens com.nhnacademy.groupstudy.basicjava to javafx.fxml;
     exports com.nhnacademy.groupstudy.basicjava;
 
-    //
+    // example
 //    opens com.nhnacademy.groupstudy.chapter1 to javafx.fxml;
 //    exports com.nhnacademy.groupstudy.chapter1;
 }
