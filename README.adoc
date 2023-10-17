@@ -1,4 +1,4 @@
-= nhnacademy_group5 
+== nhnacademy_group5 
 
 1. 구성원
 2. 일정
@@ -6,13 +6,26 @@
 4. 개발 환경
 
 == 1️⃣ 조원
-1. 지영훈 : 
-2. 이진우 : 
-3. 김지원 : 
+1. 지영훈 
+2. 이진우 
+3. 김지원 
 
-== 2️⃣ 일정(계획 예정)
-1. Java Version 9.0 : https://math.hws.edu/javanotes/
- 
+== 2️⃣ 일정
+♿︎ Java Version 9.0 : https://math.hws.edu/javanotes/
+
+ * 10.11 +
+ . group : 1장에서 개념의 키워드를 선정하여 토론 진행
+ * 10.12 +
+ . group : 2장 Excecise code review(group)
+ * 10.13 +
+ . 1,2장 개인공부(1,2장 내용정리, 3장 연습문제 해결)
+ * 10.16 +
+ . group : 3장 Excecise code review(group) +
+ . issue : 연습문제의 해결의 초점 > *reusability* 을 생각하며 풀기
+ * 10.17 +
+ . group : 4장 code review
+
+
 == 3️⃣ 규칙
 1. git
    * 각 조원은 본인의 폴더에 과제를 제출.
