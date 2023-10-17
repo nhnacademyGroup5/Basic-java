@@ -21,9 +21,9 @@
  . 1,2장 개인공부(1,2장 내용정리, 3장 연습문제 해결)
  * 10.16 +
  . group : 3장 Excecise code review(group) +
- . issue : 연습문제의 해결의 초점 > *reusability* 을 생각하며 풀기
+ . issue : 연습문제의 해결의 초점 보다는 *reusability* 을 생각하며 풀기
  * 10.17 +
- . group : 4장 code review
+ . personal : 4장 연습문제 reusability를 고려하며 코드작성.
 
 
 == 3️⃣ 규칙
