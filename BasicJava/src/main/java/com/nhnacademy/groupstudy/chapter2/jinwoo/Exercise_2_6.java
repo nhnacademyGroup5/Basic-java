@@ -13,7 +13,6 @@ public class Exercise_2_6 {
             System.out.println("Your first name is " + arr[0] + ", which has " + arr[0].length() + " characters");
             System.out.println("Your last name is " + arr[1] + ", which has " + arr[1].length() + " characters");
             System.out.println("Your initials are " + initials);
-
         } catch(IOException e ){
             e.getStackTrace();
         }
