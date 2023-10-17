@@ -2,7 +2,6 @@ package com.nhnacademy.groupstudy.chapter3.jinwoo;
 
 import java.util.Random;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Exercise_3_1 {
     private static final Random random = new Random();
