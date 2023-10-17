@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Exercise2 {
+    public static int valueOfHexaDecimal(char index){
+        return valueOfHexaDecimal((int) index);
+    }
     public static int valueOfHexaDecimal(int index){
         try {
             if (!String.valueOf(index).matches("^[0-9A-Fa-f]+$")) {
@@ -27,10 +30,8 @@ public class Exercise2 {
                 throw new IllegalArgumentException("변환 할 수 없습니다.");
             }
             return input.chars()
-                    .map(Character::toUpperCase)
                     .map(Exercise2::valueOfHexaDecimal)
-                    .reduce((x,y) -> x * 16 + y)
-                    .orElse(-1);
+                    .reduce(0, (x,y) -> x * 16 + y);
         } catch(IllegalArgumentException e){
             System.out.println(e.getMessage());
             return -1;
@@ -40,6 +41,8 @@ public class Exercise2 {
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
             System.out.println(hexaDecimalToDecimal(br.readLine()));
+            System.out.println(valueOfHexaDecimal('2'));
+            System.out.println(valueOfHexaDecimal('A'));
         } catch(IOException e){
             e.getStackTrace();
         }
