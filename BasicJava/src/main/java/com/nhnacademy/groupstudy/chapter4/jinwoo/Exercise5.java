@@ -13,7 +13,7 @@ interface ArrayProcessor{
     double apply(double[] array);
 }
 
-public class Exercise5<T extends Number>{
+public class Exercise5 {
     public static final ArrayProcessor max =
             arr -> Arrays.stream(arr)
                     .max()
