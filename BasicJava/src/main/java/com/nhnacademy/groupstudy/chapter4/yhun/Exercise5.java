@@ -1,9 +1,6 @@
 package com.nhnacademy.groupstudy.chapter4.yhun;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalDouble;
 
 interface ArrayProcessor{
     double apply(double[] array);
@@ -62,9 +59,6 @@ public class Exercise5 {
         System.out.println(minValue);
         System.out.println(sumValue);
         System.out.println(avgValue);
-
-        List<Integer> a = new ArrayList<>();
-
     }
 
 

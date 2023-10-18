@@ -15,7 +15,7 @@ public class Exercise3 {
 
             System.out.println("ave : " + rollAverage(10000));
 
-        }catch (IllegalArgumentException e){
+        }catch (IllegalArgumentException e) {
 
             // NumberFormatException 는 IllegalArgumentException 를 포함하여
             // parseInt()에 대한 NumberFormatException 을 해결.
