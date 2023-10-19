@@ -1,7 +1,6 @@
 package com.nhnacademy.groupstudy.chapter4.jinwoo.mosaic;
 
 
-import java.util.Random;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.layout.StackPane;
@@ -38,7 +37,6 @@ public class Mosaic extends Application {
     private static boolean use3DEffect = true; // When true, 3D Rects and "grouting" are used on the mosaic.
     private static int mosaicRows;      // The number of rows in the mosaic, if the window is open.
     private static int mosaicCols;      // The number of cols in the mosaic, if the window is open.
-    private static Random random = new Random();
 
 
     /**

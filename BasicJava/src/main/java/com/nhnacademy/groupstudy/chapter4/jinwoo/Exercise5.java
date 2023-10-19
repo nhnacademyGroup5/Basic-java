@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
  * returns a value of type double.
  */
 @FunctionalInterface
-interface ArrayProcessor{
+interface ArrayProcessor {
     double apply(double[] array);
 }
 

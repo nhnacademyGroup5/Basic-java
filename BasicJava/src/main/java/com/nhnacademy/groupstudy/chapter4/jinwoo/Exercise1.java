@@ -6,15 +6,7 @@ import java.io.InputStreamReader;
 
 public class Exercise1 {
     public static void printCapitalize(String input){
-        try {
-            if (input.matches("^[^a-zA-Z]+$")) {
-                throw new IllegalArgumentException("변환할 문자열이 없습니다.");
-            }
-            System.out.println(input.toUpperCase());
-        } catch(IllegalArgumentException e){
-            System.out.println(e.getMessage());
-            System.out.println(input);
-        }
+
     }
 
     public static void main(String[] args) {
