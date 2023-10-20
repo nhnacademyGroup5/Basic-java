@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 public class Exercise3 {
 
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
             int diceNumber = Integer.parseInt(br.readLine());

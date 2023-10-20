@@ -16,10 +16,8 @@ public class Exercise7 {
             int g = Mosaic.getGreen(currentRow, currentColumn);
             int b = Mosaic.getBlue(currentRow, currentColumn);
 
-            System.out.println("ㅇㄹ" + currentRow+ ", " +currentColumn);
 //            changeToRandomColor(currentRow, currentColumn);
             move(30, 30);
-            System.out.println("ㅇㄹ "+ currentRow+ ", " +currentColumn);
             Exercise6.userOfChangeColor(currentRow, currentColumn, r, g, b);
             Mosaic.delay(10);  // Remove this line to speed things up!
         }

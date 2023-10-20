@@ -3,6 +3,7 @@ package com.nhnacademy.groupstudy.chapter4.yhun;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Comparator;
 
 public class Exercise1 {
     public static void main(String[] args) throws IOException {
