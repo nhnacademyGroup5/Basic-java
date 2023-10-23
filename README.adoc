@@ -16,14 +16,16 @@
  * 10.11 +
  . group : 1장에서 개념의 키워드를 선정하여 토론 진행
  * 10.12 +
- . group : 2장 Excecise code review(group)
+ . group : 2장 Excecise code review
  * 10.13 +
  . 1,2장 개인공부(1,2장 내용정리, 3장 연습문제 해결)
  * 10.16 +
  . group : 3장 Excecise code review(group) +
  . issue : 연습문제의 해결의 초점 보다는 *reusability* 을 생각하며 풀기
- * 10.17 +
- . personal : 4장 연습문제 reusability를 고려하며 코드작성.
+ * 10.18 +
+ . group : 4장 Excecise code review
+ * 10.23 +
+ . group : 5장 Excecise code review
 
 
 == 3️⃣ 규칙
