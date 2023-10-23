@@ -14,17 +14,6 @@ public class Exercise3_1 {
                 .findFirst().orElseThrow(); // Handle the case where no match is found
 
         System.out.println(count);
-//        int count = 0;
-//
-//        while (true) {
-//            int diceOne = (int) (Math.random() * 6) + 1;
-//            int diceTwo = (int) (Math.random() * 6) + 1;
-//            count++;
-//
-//            if (diceOne == 1 && diceTwo == 1) {
-//                break;
-//            }
-//        }
-//        System.out.println("count " + count);
+
     }
 }
