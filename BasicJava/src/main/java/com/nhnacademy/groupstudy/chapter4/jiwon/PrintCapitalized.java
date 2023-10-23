@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import org.apache.commons.text.WordUtils;
 
+
 public class PrintCapitalized {
 
     void printcapitalized() {
