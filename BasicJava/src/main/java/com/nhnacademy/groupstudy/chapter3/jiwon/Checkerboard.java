@@ -29,11 +29,11 @@ public class Checkerboard extends Application {
                 x = col * 50;
                 y = row * 50;
                 if ((row % 2) == (col % 2)) {
-                    g.setFill(Color.RED);
+                    g.setFill(Color.RED); //filling shape/ color
                 } else {
                     g.setFill(Color.BLACK);
                 }
-                g.fillRect(x, y, 50, 50);
+                g.fillRect(x, y, 50, 50); // 직사각형 내부 채우기
             }
 
         }
