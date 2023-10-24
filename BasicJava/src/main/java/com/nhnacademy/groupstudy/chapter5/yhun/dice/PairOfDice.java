@@ -1,10 +1,10 @@
-package com.nhnacademy.groupstudy.chapter5.yhun;
+package com.nhnacademy.groupstudy.chapter5.yhun.dice;
 
 public class PairOfDice {
      private int dice1;
      private int dice2;
 
-     PairOfDice() {
+     public PairOfDice() {
           roll();
      }
 

@@ -1,7 +1,4 @@
-package com.nhnacademy.groupstudy.chapter5.poker;
-
-import com.nhnacademy.groupstudy.chapter5.poker.Card;
-import com.nhnacademy.groupstudy.chapter5.poker.Hand;
+package com.nhnacademy.groupstudy.chapter5.yhun.blackjack;
 
 public class BlackjackHand extends Hand {
 

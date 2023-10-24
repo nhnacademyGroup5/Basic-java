@@ -1,4 +1,4 @@
-package com.nhnacademy.groupstudy.chapter5.yhun;
+package com.nhnacademy.groupstudy.chapter5.yhun.statclac;
 
 public class StatCalc {
 

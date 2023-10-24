@@ -1,4 +1,4 @@
-package com.nhnacademy.groupstudy.chapter5.poker;
+package com.nhnacademy.groupstudy.chapter5.yhun.blackjack;
 
 
 /**

@@ -1,8 +1,9 @@
-package com.nhnacademy.groupstudy.chapter5.yhun;
+package com.nhnacademy.groupstudy.chapter5.yhun.quiz;
 
-public class AdditionQuestion {
+public class AdditionQuestion implements IntQuestion{
 
-     private int a, b;  // The numbers in the problem.
+     private int a;
+     private int b;  // The numbers in the problem.
 
      public AdditionQuestion() { // constructor
           a = (int)(Math.random() * 50 + 1);
