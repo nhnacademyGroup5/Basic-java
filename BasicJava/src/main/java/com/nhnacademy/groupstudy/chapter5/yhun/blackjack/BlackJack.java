@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BlackJack {
+
+     public static final  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
      private final BlackJackTable table;
      private BlackjackHand dealer;
      private BlackjackHand player;
@@ -16,32 +18,31 @@ public class BlackJack {
           table = new BlackJackTable();
           dealer = new BlackjackHand();
           player = new BlackjackHand();
-          cardInit();
+          distributionCard();
      }
      public BlackJack(int unitCount){
           this();
           this.unitCount = unitCount;
      }
 
-     public void clear(){
+     public void tableInit(){
           table.deckInitialization();
-          player.clear();
-          dealer.clear();
+          reDistributionCard();
      }
 
-     public void cardInit(){
+     public void reDistributionCard(){
+          player.clear();
+          dealer.clear();
+          distributionCard();
+     }
+
+     public void distributionCard(){
           table.distributeHand(player, 2);
           table.distributeHand(dealer, 2);
      }
 
      public boolean winCondition(BlackjackHand hand){
           return hand.getBlackjackValue() == 21;
-     }
-
-     public String br() throws IOException{
-          try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
-               return br.readLine();
-          }
      }
 
      public void winPrint(BlackjackHand dealer, BlackjackHand player){
@@ -66,9 +67,7 @@ public class BlackJack {
           }
 
           while (true) {
-
                /* Display user's cards, and let user decide to Hit or Stand. */
-
                System.out.println();
                System.out.println();
                System.out.println("Your cards are:");
@@ -82,7 +81,7 @@ public class BlackJack {
 
                do {
                     try {
-                         userAction = Character.toUpperCase(br().charAt(0));
+                         userAction = Character.toUpperCase(br.readLine().charAt(0));
                     }catch (IOException e){
                          e.getMessage();
                     }
@@ -116,8 +115,6 @@ public class BlackJack {
                     }
                }
           }
-
-
 
      }
 
