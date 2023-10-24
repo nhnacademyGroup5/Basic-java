@@ -4,7 +4,6 @@ public class PairOfDiceExercise5_1 {
     private static PairOfDice pairOfDice = new PairOfDice();
 
     public static void main(String[] args) {
-
         int count = 0;
 
         do {
