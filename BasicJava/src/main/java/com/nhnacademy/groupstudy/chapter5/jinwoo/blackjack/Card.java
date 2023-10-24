@@ -1,4 +1,4 @@
-package com.nhnacademy.groupstudy.chapter5.jinwoo.exercise4;
+package com.nhnacademy.groupstudy.chapter5.jinwoo.blackjack;
 
 /**
  * An object of type Card represents a playing card from a
@@ -144,7 +144,7 @@ public class Card {
                 return "Joker #" + value;
         }
         else
-            return getValueAsString() + " of " + getSuitAsString();
+            return getSuitAsString()  + " " + getValueAsString();
     }
 
 

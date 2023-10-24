@@ -1,11 +1,11 @@
 package com.nhnacademy.groupstudy.chapter5.jinwoo;
 
-import static com.nhnacademy.groupstudy.chapter5.jinwoo.exercise1.Test.diceSum;
+import static com.nhnacademy.groupstudy.chapter5.jinwoo.exercise1.DiceOperation.*;
 
 import com.nhnacademy.groupstudy.chapter5.jinwoo.exercise2.StatCalc;
 import java.util.stream.IntStream;
 
-public class Excercise3 {
+public class Exercise3 {
     public static void main(String[] args) {
         IntStream.rangeClosed(2, 12)
                 .forEach(index -> {

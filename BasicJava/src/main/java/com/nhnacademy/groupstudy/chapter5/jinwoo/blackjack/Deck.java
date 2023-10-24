@@ -1,4 +1,4 @@
-package com.nhnacademy.groupstudy.chapter5.jinwoo.exercise4;
+package com.nhnacademy.groupstudy.chapter5.jinwoo.blackjack;
 
 import java.util.Random;
 

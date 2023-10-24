@@ -1,4 +1,4 @@
-package com.nhnacademy.groupstudy.chapter5.jinwoo.exercise4;
+package com.nhnacademy.groupstudy.chapter5.jinwoo.blackjack;
 
 public class BlackjackHand extends Hand {
 
@@ -8,14 +8,10 @@ public class BlackjackHand extends Hand {
      */
     public int getBlackjackValue() {
 
-        int val;      // The value computed for the hand.
-        boolean ace;  // This will be set to true if the
+        int val = 0;      // The value computed for the hand.
+        boolean ace = false;  // This will be set to true if the
         //   hand contains an ace.
-        int cards;    // Number of cards in the hand.
-
-        val = 0;
-        ace = false;
-        cards = getCardCount();  // (method defined in class Hand.)
+        int cards = getCardCount();    // Number of cards in the hand.
 
         for ( int i = 0;  i < cards;  i++ ) {
             // Add the value of the i-th card in the hand.
