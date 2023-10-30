@@ -1,4 +1,4 @@
-package com.nhnacademy.groupstudy.chapter7.yhun.array.list;
+package com.nhnacademy.groupstudy.chapter7.yhun.list;
 
 import java.util.Arrays;
 

@@ -1,7 +1,7 @@
-package com.nhnacademy.groupstudy.chapter7.yhun.array;
+package com.nhnacademy.groupstudy.chapter7.yhun;
 
-import com.nhnacademy.groupstudy.chapter7.yhun.array.list.ArrayList;
-import com.nhnacademy.groupstudy.chapter7.yhun.array.list.List;
+import com.nhnacademy.groupstudy.chapter7.yhun.list.ArrayList;
+import com.nhnacademy.groupstudy.chapter7.yhun.list.List;
 
 public class RandomInteger {
      private static final List<Integer> list = new ArrayList<>();

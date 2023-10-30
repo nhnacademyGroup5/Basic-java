@@ -1,8 +1,8 @@
-package com.nhnacademy.groupstudy.chapter7.yhun.array;
+package com.nhnacademy.groupstudy.chapter7.yhun;
 
-import com.nhnacademy.groupstudy.chapter7.yhun.array.list.ArrayList;
-import com.nhnacademy.groupstudy.chapter7.yhun.array.list.List;
-import com.nhnacademy.groupstudy.chapter7.yhun.array.matrix.MatrixOperator;
+import com.nhnacademy.groupstudy.chapter7.yhun.list.ArrayList;
+import com.nhnacademy.groupstudy.chapter7.yhun.list.List;
+import com.nhnacademy.groupstudy.chapter7.yhun.matrix.MatrixOperator;
 
 public class TransposeTest {
 

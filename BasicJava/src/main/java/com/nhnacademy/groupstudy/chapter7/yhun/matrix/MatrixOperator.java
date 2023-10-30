@@ -1,7 +1,7 @@
-package com.nhnacademy.groupstudy.chapter7.yhun.array.matrix;
+package com.nhnacademy.groupstudy.chapter7.yhun.matrix;
 
-import com.nhnacademy.groupstudy.chapter7.yhun.array.list.ArrayList;
-import com.nhnacademy.groupstudy.chapter7.yhun.array.list.List;
+import com.nhnacademy.groupstudy.chapter7.yhun.list.ArrayList;
+import com.nhnacademy.groupstudy.chapter7.yhun.list.List;
 
 public class MatrixOperator {
      public static <T> List<List<T>> transpose(List<List<T>> list){

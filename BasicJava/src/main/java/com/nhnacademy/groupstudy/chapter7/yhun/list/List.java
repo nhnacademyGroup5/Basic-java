@@ -1,6 +1,4 @@
-package com.nhnacademy.groupstudy.chapter7.yhun.array.list;
-
-import java.util.Iterator;
+package com.nhnacademy.groupstudy.chapter7.yhun.list;
 
 public interface List<T>{
 
