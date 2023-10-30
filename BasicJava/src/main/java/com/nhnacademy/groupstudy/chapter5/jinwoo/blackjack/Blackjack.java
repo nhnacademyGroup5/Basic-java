@@ -6,29 +6,35 @@ import java.io.InputStreamReader;
 import java.util.stream.IntStream;
 
 public class Blackjack {
-    private boolean winOrNot;
     private final Deck deck = new Deck(false);
     private final BlackjackHand user = new BlackjackHand();
     private final BlackjackHand dealer = new BlackjackHand();
-    public void result(){
+    public void play(){
+        boolean winOrNot = winOrNot();
         System.out.println("---------------------------");
         System.out.println("User's value : " + user.getBlackjackValue());
+        System.out.println();
+        System.out.println("Dealer's Hand");
+        IntStream.range(0, dealer.getCardCount())
+                .forEach(index -> System.out.println(dealer.getCard(index)));
+        System.out.println();
         System.out.println("Dealer's value : " + dealer.getBlackjackValue());
+        System.out.println();
         System.out.println(winOrNot ? "User Win!" : "Dealer Win!");
     }
-    public void play() {
+    public boolean winOrNot() {
         deck.shuffle();
         init();
         if (blackJack(dealer)) {
-            winOrNot = false;
+            return false;
         }
         else if (!blackJack(dealer) && blackJack(user)) {
-            winOrNot = true;
+            return true;
         } else {
             String order = hitOrStand();
             while (order.equals("h")) {
                 if (user.getBlackjackValue() > 21) {
-                    winOrNot = false;
+                    return false;
                 } else{
                     order = hitOrStand();
                 }
@@ -36,7 +42,7 @@ public class Blackjack {
             if (dealer.getBlackjackValue() <= 16) {
                 dealer.addCard(deck.dealCard());
             }
-            winOrNot = 21 - user.getBlackjackValue() < 21 - dealer.getBlackjackValue();
+            return 21 - user.getBlackjackValue() < 21 - dealer.getBlackjackValue();
         }
     }
 
@@ -77,7 +83,7 @@ public class Blackjack {
             }
         } catch (IOException e) {
             e.getStackTrace();
-            return null;
+            return hitOrStand();
         }
     }
 }
