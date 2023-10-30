@@ -7,6 +7,9 @@ public class RandomConvert {
     final static int COLUMNS = 10;     // Number of columns in the mosaic.
     final static int SQUARE_SIZE = 30; // Size of each square in the mosaic.
 
+    static int row;
+    static int col;
+
     public static void main(String[] args) {
 
         Mosaic.open(ROWS, COLUMNS, SQUARE_SIZE, SQUARE_SIZE);
@@ -15,14 +18,14 @@ public class RandomConvert {
             int randomRow = (int) (ROWS * Math.random());
             int randomColumn = (int) (COLUMNS * Math.random());
             convertRandomNeighbor(randomRow, randomColumn);
-            Mosaic.delay(1);
+            Mosaic.delay(1000);
 
         }
     }
 
     static void fillWithRandomColors() {
-        for (int row = 0; row < ROWS; row++) {
-            for (int col = 0; col < COLUMNS; col++) {
+        for (row = 0; row < ROWS; row++) {
+            for (col = 0; col < COLUMNS; col++) {
                 int r = (int) (256 * Math.random());
                 int g = (int) (256 * Math.random());
                 int b = (int) (256 * Math.random());
