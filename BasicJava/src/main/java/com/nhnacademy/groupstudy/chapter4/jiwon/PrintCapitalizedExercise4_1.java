@@ -6,7 +6,7 @@ public class PrintCapitalizedExercise4_1 {
         PrintCapitalized printCapitalized = new PrintCapitalized();
         printCapitalized.printcapitalized();
 
-        String str = "ndsn smd mds";
+        String str = "ndsns !smd mds";
         String capstr = streamCapitalize.streamCapitalize(str);
         System.out.println(capstr);
     }

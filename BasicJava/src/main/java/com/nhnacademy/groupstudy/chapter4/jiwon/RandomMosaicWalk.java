@@ -55,16 +55,6 @@ public class RandomMosaicWalk {
         Mosaic.setColor(rowNum, colNum, red, green, blue);
     }  // end changeToRandomColor
 
-    /**
-     * Move the disturbance.
-     * Precondition:   The global variables currentRow and currentColumn
-     * are within the legal range of row and column numbers.
-     * Postcondition:  currentRow or currentColumn is changed to one of the
-     * neighboring positions in the grid -- up, down, left, or
-     * right from the current position.  If this moves the
-     * position outside of the grid, then it is moved to the
-     * opposite edge of the grid.
-     */
     static void randomMove() {
         int directionNum; // Randomly set to 0, 1, 2, or 3 to choose direction.
         directionNum = (int) (4 * Math.random());

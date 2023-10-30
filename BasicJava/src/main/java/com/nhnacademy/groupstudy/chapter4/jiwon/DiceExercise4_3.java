@@ -4,7 +4,7 @@ public class DiceExercise4_3 {
     public static void main(String[] args) {
         DiceSum diceSum = new DiceSum();
 
-        diceSum.diceSum(15);
+        diceSum.diceSum(10);
 
     }
 }
