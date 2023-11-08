@@ -1,4 +1,4 @@
-package com.nhnacademy.groupstudy.chapter8.yhun;
+package com.nhnacademy.groupstudy.chapter8.yhun.expr;
 
 public class Expr {
 

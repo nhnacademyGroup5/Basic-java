@@ -5,10 +5,11 @@ public class RomaConvert {
      private String roman;
      private int romanInteger;
      private final char[] word = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+
      public RomaConvert(String roman){
-          this.roman = roman.toUpperCase();
           if(roman.isEmpty())
                throw new NumberFormatException("null");
+          this.roman = roman.toUpperCase();
 
           this.romanInteger = romaToInteger();
      }
@@ -41,18 +42,25 @@ public class RomaConvert {
           int result = 0;
           int index = 0;
 
-          while (!temp.isEmpty()){
+          while (!temp.isEmpty() && index < RomaDecimal.values().length){
                if(!checkRoma(temp) ){
                     throw new NumberFormatException("roma range error");
                }
 
                if(temp.indexOf(RomaDecimal.values()[index].getRoma()) == 0){
                     result += RomaDecimal.values()[index].getValue();
-                    temp = temp.substring(RomaDecimal.values()[index].getValue());
+
+                    if(temp.length() > RomaDecimal.values()[index].getRoma().length()){
+                         temp = temp.substring(RomaDecimal.values()[index].getRoma().length());
+                    }
+                    else break;
                }else{
                     index++;
                }
           }
+          if(result > 3999)
+               throw new NumberFormatException("integer overflow");
+
           return result;
      }
 
@@ -73,16 +81,5 @@ public class RomaConvert {
           return this.romanInteger;
      }
 
-     public static void main(String[] args) {
-//          System.out.println(RomaDecimal.CD.ordinal());
-//          System.out.println(RomaDecimal.values()[0].getRoma().length());
-//          System.out.println(RomaDecimal.values()[0].getValue());
 
-          RomaConvert c1 = new RomaConvert(10);
-          RomaConvert c2 = new RomaConvert("II");
-
-          System.out.println(c1.toInt() + " " + c1.toString());
-          System.out.println(c2.toInt() + " " + c2.toString());
-
-     }
 }
