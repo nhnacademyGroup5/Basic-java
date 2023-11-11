@@ -1,9 +1,8 @@
 package com.nhnacademy.groupstudy.chapter7.jiwon;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
 
-public class Exercise7_1Random<T extends Number> extends AbstractList<T> {
+public class Exercise7_1Random<T extends Number> {
 
     private final ArrayList<T> numberList;
     private final RandomNumberGenerator<T> generator;
@@ -13,18 +12,18 @@ public class Exercise7_1Random<T extends Number> extends AbstractList<T> {
         numberList = new ArrayList<>();
     }
 
-    @Override
-    public T get(int index) {
-        if (index < 0 || index >= numberList.size()) {
-            throw new IndexOutOfBoundsException("Index out of bounds");
-        }
-        return numberList.get(index);
-    }
-
-    @Override
-    public int size() {
-        return numberList.size();
-    }
+//    @Override
+//    public T get(int index) {
+//        if (index < 0 || index >= numberList.size()) {
+//            throw new IndexOutOfBoundsException("Index out of bounds");
+//        }
+//        return numberList.get(index);
+//    }
+//
+//    @Override
+//    public int size() {
+//        return numberList.size();
+//    }
 
     public T getRandomNumber(T count, T max) {
         if (count.doubleValue() > max.doubleValue()) {
