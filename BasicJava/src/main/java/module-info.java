@@ -10,7 +10,7 @@ module com.nhnacademy.groupstudy{
 
     exports com.nhnacademy.groupstudy.chapter4.jinwoo.mosaic;
     exports com.nhnacademy.groupstudy.chapter4.yhun;
-
+    exports com.nhnacademy.groupstudy.chapter8.yhun;
     exports com.nhnacademy.groupstudy.chapter7.yhun.fx;
 
     // example
