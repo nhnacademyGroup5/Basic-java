@@ -6,9 +6,9 @@ public class ListTest {
 
      public static void main(String[] args) {
           SingleLinkedList<String> list = new SingleLinkedList<>();
-          list.insert("123");
-          list.insert("123");
-          list.insert("123");
+          list.insert("1");
+          list.insert("2");
+          list.insert("3");
           list.insert("123");
           list.print();
 
@@ -16,6 +16,8 @@ public class ListTest {
           SingleLinkedList<String> reverseList = list.reverse();
           reverseList.print();
 
+          Integer a = 1;
+          System.out.println(a.compareTo(-1));
      }
 
 }
