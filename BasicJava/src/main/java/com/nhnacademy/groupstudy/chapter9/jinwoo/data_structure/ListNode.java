@@ -3,10 +3,11 @@ package com.nhnacademy.groupstudy.chapter9.jinwoo.data_structure;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class ListNode<T> implements UniDirectional<T>{
+public class ListNode<T> implements Node<T>{
     public static void main(String[] args) {
         ListNode<Integer> listnode = ListNode.create();
         listnode.insert(1);
@@ -15,12 +16,12 @@ public class ListNode<T> implements UniDirectional<T>{
         listnode.insert(4);
         listnode.insert(5);
 
-        listnode.get((Consumer<Integer>) System.out::println);
+        listnode.forEach(System.out::println);
         System.out.println();
 
         ListNode<Integer> reverse = listnode.reverse();
 
-        reverse.get((Consumer<Integer>) System.out::println);
+        reverse.forEach(System.out::println);
         System.out.println();
 
         System.out.println(reverse.size());
@@ -51,6 +52,36 @@ public class ListNode<T> implements UniDirectional<T>{
         }
     }
 
+    private boolean equalValue(T item){
+        return this.item.equals(item);
+    }
+
+    public void remove(T item){
+        if(!this.contains(item)){
+            throw new NoSuchElementException("찾는 값이 없습니다.");
+        }
+        if(equalValue(item)){
+            this.clear();
+        } else {
+            next.remove(item);
+        }
+    }
+
+    public void clear(){
+        item = null;
+        next = null;
+    }
+
+    public boolean contains(T item){
+        if(equalValue(item)){
+            return true;
+        } else if(next != null){
+            return next.contains(item);
+        } else{
+            return false;
+        }
+    }
+
     public int size(){
         if(item != null){
             int nextSize = next == null ? 0 : next.size();
@@ -59,11 +90,18 @@ public class ListNode<T> implements UniDirectional<T>{
         return 0;
     }
 
-    public void get(Consumer<T> consumer){
+    public ListNode<T> search(T item) {
+        if(!this.contains(item)){
+            throw new NoSuchElementException("찾는 값이 없습니다.");
+        }
+        return equalValue(item) ? this : next.search(item);
+    }
+
+    public void forEach(Consumer<T> consumer){
         if(item != null){
             consumer.accept(item);
             if(next != null){
-                next.get(consumer);
+                next.forEach(consumer);
             }
         }
     }
@@ -84,7 +122,7 @@ public class ListNode<T> implements UniDirectional<T>{
         ListNode<T> newListNode = ListNode.create();
         List<T> list = new ArrayList<>();
 
-        get((Consumer<T>) list::add);
+        this.forEach(list::add);
 
         Collections.reverse(list);
         list.forEach(newListNode::insert);

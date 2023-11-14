@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class TreeNode<T extends Comparable<T>> implements BiDirectional<T>{
+public class TreeNode<T extends Comparable<T>> implements Node<T>{
     public static void main(String[] args) {
         TreeNode<String> tree = TreeNode.create();
         tree.insert("b");
@@ -12,11 +12,11 @@ public class TreeNode<T extends Comparable<T>> implements BiDirectional<T>{
         tree.insert("c");
         tree.insert("h");
         tree.insert("k");
-        tree.preOrder((Consumer<String>) System.out::println);
+        tree.inOrderTraverse(System.out::println);
     }
-    protected T root;
-    protected TreeNode<T> left;
-    protected TreeNode<T> right;
+    private T root;
+    private TreeNode<T> left;
+    private TreeNode<T> right;
 
     private TreeNode(T item){
         this.root = item;
@@ -50,11 +50,27 @@ public class TreeNode<T extends Comparable<T>> implements BiDirectional<T>{
         }
     }
 
-    public boolean contains(T item) {
-        if (item == null) {
-            return false;
+    public void remove(T item){
+        if(root == null || !this.contains(item)){
+            throw new NoSuchElementException("찾는 값이 없습니다.");
         }
-        else if ( item.equals(root) ) {
+        if(item.compareTo(root) < 0){
+            left.remove(item);
+        } else if(item.compareTo(root) > 0){
+            right.remove(item);
+        } else {
+            this.clear();
+        }
+    }
+
+    public void clear(){
+        root = null;
+        left = null;
+        right = null;
+    }
+
+    public boolean contains(T item) {
+        if ( item.equals(root) ) {
             return true;
         }
         else if ( item.compareTo(root) < 0 && left != null) {
@@ -62,8 +78,9 @@ public class TreeNode<T extends Comparable<T>> implements BiDirectional<T>{
         }
         else if(right != null){
             return right.contains(item );
+        } else{
+            return false;
         }
-        throw new NoSuchElementException("찾는 값이 없습니다.");
     }
 
     public int count() {
@@ -81,74 +98,53 @@ public class TreeNode<T extends Comparable<T>> implements BiDirectional<T>{
         return 1 + countLeft + countRight;
     }
 
-    private T get(Predicate<T> predicate, TreeNode<T> one, TreeNode<T> another) {
-        if (root != null) {
-            if (predicate.test(root)) {
-                return root;
-            }
-            if (one != null) {
-                return one.preOrder(predicate);
-            }
-            if (another != null) {
-                return another.preOrder(predicate);
-            }
+    public TreeNode<T> search(T item){
+        if(!contains(item)){
+            throw new NoSuchElementException("찾는 값이 없습니다.");
         }
-        return null;
-    }
-
-    private void get(Consumer<T> consumer, TreeNode<T> one, TreeNode<T> another){
-        if(root != null){
-            consumer.accept(root);
-            if(one != null){
-                one.preOrder(consumer);
-            }
-            if(another != null){
-                another.preOrder(consumer);
-            }
+        if(item.compareTo(root) < 0){
+            return left.search(item);
+        } else if(item.compareTo(root) > 0 ){
+            return right.search(item);
+        } else{
+            return this;
         }
     }
 
-    public void inOrder(Consumer<T> consumer){
+    public void inOrderTraverse(Consumer<T> consumer){
         if(root != null){
             if(left != null){
-                left.preOrder(consumer);
+                left.inOrderTraverse(consumer);
             }
             consumer.accept(root);
             if(right != null){
-                right.preOrder(consumer);
+                right.inOrderTraverse(consumer);
             }
         }
     }
 
-    public void preOrder(Consumer<T> consumer){
-        get(consumer, left, right);
-    }
-
-    public void postOrder(Consumer<T> consumer){
-        get(consumer, right, left);
-    }
-
-    public T inOrder(Predicate<T> predicate){
+    public void preOrderTraverse(Consumer<T> consumer){
         if(root != null){
+            consumer.accept(root);
             if(left != null){
-                left.preOrder(predicate);
-            }
-            if(predicate.test(root)){
-                return root;
+                left.inOrderTraverse(consumer);
             }
             if(right != null){
-                right.preOrder(predicate);
+                right.inOrderTraverse(consumer);
             }
         }
-        return null;
     }
 
-    public T preOrder(Predicate<T> predicate){
-        return get(predicate, left, right);
-    }
-
-    public T postOrder(Predicate<T> predicate) {
-        return get(predicate, right, left);
+    public void postOrderTraverse(Consumer<T> consumer) {
+        if(root != null){
+            consumer.accept(root);
+            if(right != null){
+                right.inOrderTraverse(consumer);
+            }
+            if(left != null){
+                left.inOrderTraverse(consumer);
+            }
+        }
     }
 
 }
