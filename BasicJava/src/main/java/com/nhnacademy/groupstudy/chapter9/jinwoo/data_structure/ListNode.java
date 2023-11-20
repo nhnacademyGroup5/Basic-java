@@ -8,6 +8,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class ListNode<T> implements Node<T>{
+
     public static void main(String[] args) {
         ListNode<Integer> listnode = ListNode.create();
         listnode.insert(1);
@@ -25,9 +26,16 @@ public class ListNode<T> implements Node<T>{
         System.out.println();
 
         System.out.println(reverse.size());
+        System.out.println();
+
+        reverse.remove(3);
+        reverse.forEach(System.out::println);
+
     }
+
     private T item;
     private ListNode<T> next;
+
 
     private ListNode() {}
     private ListNode(T item) {
@@ -61,9 +69,25 @@ public class ListNode<T> implements Node<T>{
             throw new NoSuchElementException("찾는 값이 없습니다.");
         }
         if(equalValue(item)){
-            this.clear();
+            if(next != null){
+                this.item = this.next.item;
+                this.next = next.next;
+            } else{
+                this.clear();
+            }
         } else {
             next.remove(item);
+        }
+    }
+
+    public void removeLast(){
+        if(this.next == null){
+            this.clear();
+        }
+        else if(this.next.next == null){
+            this.next = null;
+        } else{
+            next.removeLast();
         }
     }
 
@@ -112,10 +136,18 @@ public class ListNode<T> implements Node<T>{
                 return item;
             }
             if(next != null){
-                next.get(predicate);
+                return next.get(predicate);
             }
         }
         return null;
+    }
+
+    public T getLast(){
+        if(next == null){
+            return item;
+        } else{
+            return next.getLast();
+        }
     }
 
     public ListNode<T> reverse(){

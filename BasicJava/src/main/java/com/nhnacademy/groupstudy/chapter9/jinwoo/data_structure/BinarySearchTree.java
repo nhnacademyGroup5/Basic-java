@@ -2,11 +2,10 @@ package com.nhnacademy.groupstudy.chapter9.jinwoo.data_structure;
 
 import java.util.NoSuchElementException;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
 
-public class TreeNode<T extends Comparable<T>> implements Node<T>{
+public class BinarySearchTree<T extends Comparable<T>> implements Node<T>{
     public static void main(String[] args) {
-        TreeNode<String> tree = TreeNode.create();
+        BinarySearchTree<String> tree = BinarySearchTree.create();
         tree.insert("b");
         tree.insert("a");
         tree.insert("c");
@@ -14,36 +13,37 @@ public class TreeNode<T extends Comparable<T>> implements Node<T>{
         tree.insert("k");
         tree.inOrderTraverse(System.out::println);
     }
-    private T root;
-    private TreeNode<T> left;
-    private TreeNode<T> right;
 
-    private TreeNode(T item){
+    private T root;
+    private BinarySearchTree<T> left;
+    private BinarySearchTree<T> right;
+
+    private BinarySearchTree(T item){
         this.root = item;
     }
 
-    private TreeNode(){
+    private BinarySearchTree(){
     }
 
-    public static <T extends Comparable<T>> TreeNode<T> create() {
-        return new TreeNode<>();
+    public static <T extends Comparable<T>> BinarySearchTree<T> create() {
+        return new BinarySearchTree<>();
     }
 
-    public static <T extends Comparable<T>> TreeNode<T> create(T item){
-        return new TreeNode<>(item);
+    public static <T extends Comparable<T>> BinarySearchTree<T> create(T item){
+        return new BinarySearchTree<>(item);
     }
     public void insert(T item) {
         if(root == null){
             root = item;
         } else if ( item.compareTo(root) < 0 ) {
             if (left == null ) {
-                left = TreeNode.create(item);
+                left = BinarySearchTree.create(item);
             } else{
                 left.insert(item);
             }
         } else {
             if (right == null ) {
-                right = TreeNode.create(item);
+                right = BinarySearchTree.create(item);
             } else {
                 right.insert(item);
             }
@@ -98,7 +98,7 @@ public class TreeNode<T extends Comparable<T>> implements Node<T>{
         return 1 + countLeft + countRight;
     }
 
-    public TreeNode<T> search(T item){
+    public BinarySearchTree<T> search(T item){
         if(!contains(item)){
             throw new NoSuchElementException("찾는 값이 없습니다.");
         }
@@ -146,5 +146,4 @@ public class TreeNode<T extends Comparable<T>> implements Node<T>{
             }
         }
     }
-
 }
